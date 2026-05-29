@@ -1,0 +1,176 @@
+.section {
+  padding: clamp(72px, 10vw, 130px) clamp(18px, 5vw, 80px);
+  background: var(--color-page-bg);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(280px, 1fr);
+  gap: clamp(28px, 5vw, 74px);
+  align-items: center;
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 52px);
+  border: 1px solid rgba(246, 238, 224, 0.18);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+  animation: luxuryReveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 38%;
+}
+
+.collage {
+  position: relative;
+  min-height: clamp(320px, 42vw, 500px);
+}
+
+.collage img {
+  position: absolute;
+  width: 58%;
+  height: 68%;
+  object-fit: cover;
+  box-shadow: 0 18px 34px rgba(38, 25, 20, 0.22);
+}
+
+.photo1 {
+  top: 0;
+  left: 7%;
+  animation: luxuryFloatOne 8s ease-in-out infinite alternate;
+}
+
+.photo2 {
+  right: 0;
+  bottom: 8%;
+  z-index: 1;
+  border: 10px solid var(--color-surface);
+  animation: luxuryFloatTwo 9s ease-in-out infinite alternate;
+}
+
+.photo3 {
+  bottom: 0;
+  left: 0;
+  width: 40% !important;
+  height: 38% !important;
+  filter: sepia(0.14) saturate(0.82);
+  animation: luxuryFloatThree 7s ease-in-out infinite alternate;
+}
+
+.copy {
+  color: var(--color-text);
+  animation: luxuryCopyIn linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 42%;
+}
+
+@keyframes luxuryReveal {
+  from {
+    opacity: 0;
+    transform: translateY(54px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes luxuryCopyIn {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes luxuryFloatOne {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-1deg);
+  }
+
+  to {
+    transform: translate3d(-8px, -10px, 0) rotate(1deg);
+  }
+}
+
+@keyframes luxuryFloatTwo {
+  from {
+    transform: translate3d(0, 0, 0) rotate(1deg);
+  }
+
+  to {
+    transform: translate3d(10px, 8px, 0) rotate(-1deg);
+  }
+}
+
+@keyframes luxuryFloatThree {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(8px, -6px, 0);
+  }
+}
+
+.copy p {
+  margin: 0 0 16px;
+  color: var(--color-primary);
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+}
+
+.copy h2 {
+  margin: 0 0 24px;
+  color: var(--color-primary);
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.copy span {
+  display: block;
+  max-width: 560px;
+  color: var(--color-muted);
+  font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+  line-height: 1.8;
+}
+
+@media (max-width: 820px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .collage {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 540px) {
+  .section {
+    padding: 54px 14px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .collage {
+    min-height: 290px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .copy,
+  .photo1,
+  .photo2,
+  .photo3 {
+    animation: none;
+  }
+}

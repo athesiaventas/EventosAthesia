@@ -63,6 +63,26 @@ export const themeRegistry: Record<ThemeId, ThemeTokens> = {
     footerBg: '#7f2f1f',
     footerText: '#000000',
   },
+  midnight: {
+    pageBg: '#f4f1eb',
+    surface: '#f4f1eb',
+    surfaceAlt: '#e8dfd1',
+    primary: '#002d81',
+    primaryContrast: '#fff7ea',
+    accent: '#ceb888',
+    text: '#251e0f',
+    muted: '#746358',
+    border: 'rgba(83, 55, 45, 0.16)',
+    navBg: '#f4f1eb',
+    navText: '#1c1814',
+    navShadow: 'rgba(248, 239, 225, 0.12)',
+    musicAccent: '#ceb888',
+    musicSurface: '#002d81',
+    heroTitle: '#e1f8e3',
+    heroAmpersand: '#ceb888',
+    footerBg: '#050504',
+    footerText: '#f8efe1',
+  },
 }
 
 export function getThemeStyle(themeId: ThemeId) {

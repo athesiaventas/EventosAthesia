@@ -1,8 +1,9 @@
 import type { WeddingInfo } from '../../types/wedding'
 import { anaCarlosWedding } from './ana-carlos'
+import { danielEmilyWedding } from './daniel-emily'
 import { mariaJoseWedding } from './maria-jose'
 
-export const weddings: WeddingInfo[] = [mariaJoseWedding, anaCarlosWedding]
+export const weddings: WeddingInfo[] = [mariaJoseWedding, anaCarlosWedding, danielEmilyWedding]
 
 export const defaultWedding = mariaJoseWedding
 

@@ -2,7 +2,7 @@ import coupleOne from '../../assets/couple-1.jpg'
 import coupleTwo from '../../assets/couple-2.jpg'
 import coupleThree from '../../assets/couple-3.jpg'
 import coupleFour from '../../assets/couple-4.jpg'
-import heroImage from '../../assets/prueba.jpg'
+import heroImage from '../../assets/couple-1.jpg'
 import type { WeddingInfo } from '../../types/wedding'
 
 export const anaCarlosWedding: WeddingInfo = {

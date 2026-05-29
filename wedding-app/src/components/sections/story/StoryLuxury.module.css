@@ -1,0 +1,109 @@
+.section {
+  padding: clamp(72px, 10vw, 128px) clamp(18px, 6vw, 100px);
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.94fr) minmax(320px, 1fr);
+  gap: clamp(54px, 8vw, 96px);
+  align-items: center;
+  width: min(1080px, 100%);
+  margin: 0 auto;
+}
+
+.collage {
+  position: relative;
+  min-height: clamp(430px, 44vw, 600px);
+}
+
+.mainPhoto,
+.secondaryPhoto {
+  position: absolute;
+  object-fit: cover;
+  box-shadow: 0 0 0 10px #ffffff;
+}
+
+.mainPhoto {
+  top: 0;
+  right: 4%;
+  width: min(82%, 410px);
+  height: 88%;
+}
+
+.secondaryPhoto {
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: min(43%, 220px);
+  height: 46%;
+}
+
+.copy {
+  max-width: 540px;
+}
+
+.copy h2 {
+  margin: 0 0 clamp(28px, 4vw, 42px);
+  color: #002d81;
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 6vw, 6.1rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.copy p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.02rem, 1.35vw, 1.22rem);
+  line-height: 1.28;
+}
+
+.copy p + p {
+  margin-top: clamp(22px, 3vw, 34px);
+}
+
+.lead {
+  max-width: 520px;
+  font-size: clamp(1.18rem, 1.6vw, 1.5rem) !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 920px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .collage {
+    width: min(560px, 100%);
+    margin: 0 auto;
+  }
+
+  .copy {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 56px 18px;
+  }
+
+  .collage {
+    min-height: 390px;
+  }
+
+  .mainPhoto {
+    right: 0;
+    width: 82%;
+  }
+
+  .secondaryPhoto {
+    width: 48%;
+    height: 42%;
+  }
+}

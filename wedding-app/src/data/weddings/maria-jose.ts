@@ -14,7 +14,7 @@ export const mariaJoseWedding: WeddingInfo = {
     eventInfo: 'split',
     invitation: 'centered',
     gallery: 'classic',
-    guestPhotos: 'stack',
+    guestPhotos: 'mosaic',
    
     footer: 'sage',
   },

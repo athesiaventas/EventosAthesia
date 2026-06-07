@@ -20,7 +20,7 @@ export const danielEmilyWedding: WeddingInfo = {
     accommodation: 'luxury',
     giftRegistry: 'luxury',
     rsvp: 'luxury',
-    guestPhotos: 'mosaic',
+    guestPhotos: 'stack',
     footer: 'luxury',
   },
   theme: {

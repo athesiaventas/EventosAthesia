@@ -9,6 +9,8 @@ import { FooterMinimal } from '../components/sections/footer/FooterMinimal'
 import { FooterSage } from '../components/sections/footer/FooterSage'
 import { GalleryClassic } from '../components/sections/gallery/GalleryClassic'
 import { GiftRegistryLuxury } from '../components/sections/giftRegistry/GiftRegistryLuxury'
+import { GuestPhotosFirebase } from '../components/sections/guestPhotos/GuestPhotosFirebase'
+import { GuestPhotosMosaic } from '../components/sections/guestPhotos/GuestPhotosMosaic'
 import { GuestPhotosOverlay } from '../components/sections/guestPhotos/GuestPhotosOverlay'
 import { GuestPhotosStack } from '../components/sections/guestPhotos/GuestPhotosStack'
 import { HeroClassic } from '../components/sections/hero/HeroClassic'
@@ -70,6 +72,8 @@ export const templateRegistry = {
   guestPhotos: {
     stack: GuestPhotosStack,
     overlay: GuestPhotosOverlay,
+    firebase: GuestPhotosFirebase,
+    mosaic: GuestPhotosMosaic,
   },
   footer: {
     sage: FooterSage,

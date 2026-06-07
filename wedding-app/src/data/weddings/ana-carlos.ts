@@ -42,6 +42,14 @@ export const anaCarlosWedding: WeddingInfo = {
     description:
       'Queremos vivir este capítulo rodeados de las personas que han sido parte de nuestra historia. Gracias por acompañarnos en este día tan especial.',
   },
+  guestPhotos: {
+    title: 'Nuestros momentos',
+    description: 'Comparte las fotografias que captures y ayudanos a guardar cada recuerdo.',
+    uploadCode: 'AYC2026',
+    uploadStartsAt: '2026-01-01T00:00:00-06:00',
+    uploadEndsAt: '2026-12-31T23:59:59-06:00',
+    maxFileSizeMb: 5,
+  },
   footer: {
     message: 'Celebremos juntos',
     date: '20.06.2026',

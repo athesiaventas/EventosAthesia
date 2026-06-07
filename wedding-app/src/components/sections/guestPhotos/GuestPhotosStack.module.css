@@ -21,6 +21,14 @@
   line-height: 0.98;
 }
 
+.heading span {
+  width: min(680px, 100%);
+  margin-top: 18px;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.45;
+}
+
 .stack {
   position: relative;
   width: min(760px, 100%);

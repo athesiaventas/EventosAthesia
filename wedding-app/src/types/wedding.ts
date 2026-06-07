@@ -36,9 +36,28 @@ export type GiftRegistryLink = {
   href: string
 }
 
+export type GuestPhoto = {
+  id: string
+  imageUrl: string
+  storagePath: string
+  weddingSlug: string
+  createdAt?: Date
+}
+
 export type RsvpMealOption = {
   label: string
   value: string
+}
+
+export type RsvpAttendance = 'yes' | 'no'
+
+export type RsvpSubmission = {
+  weddingSlug: string
+  fullName: string
+  email: string
+  attending: RsvpAttendance
+  meal: string
+  notes: string
 }
 
 export type TemplateId = 'classic' | 'editorial' | 'luxury'
@@ -62,7 +81,7 @@ export type TemplateConfig = {
   rsvp?: 'luxury'
   invitation?: 'centered' | 'editorial' | 'luxury'
   gallery?: 'classic'
-  guestPhotos?: 'stack' | 'overlay'
+  guestPhotos?: 'stack' | 'overlay' | 'firebase' | 'mosaic'
   footer?: 'sage' | 'minimal' | 'luxury'
 }
 
@@ -130,6 +149,14 @@ export type WeddingInfo = {
     image: string
     imageAlt: string
     mealOptions: RsvpMealOption[]
+  }
+  guestPhotos?: {
+    title: string
+    description: string
+    uploadCode: string
+    uploadStartsAt: string
+    uploadEndsAt: string
+    maxFileSizeMb: number
   }
   footer: {
     message: string

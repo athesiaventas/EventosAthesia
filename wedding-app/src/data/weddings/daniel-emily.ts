@@ -20,6 +20,7 @@ export const danielEmilyWedding: WeddingInfo = {
     accommodation: 'luxury',
     giftRegistry: 'luxury',
     rsvp: 'luxury',
+    guestPhotos: 'mosaic',
     footer: 'luxury',
   },
   theme: {
@@ -175,6 +176,15 @@ export const danielEmilyWedding: WeddingInfo = {
       { label: 'Vegetarian', value: 'vegetarian' },
       { label: 'Vegan', value: 'vegan' },
     ],
+  },
+  guestPhotos: {
+    title: 'Share Your Photos',
+    description:
+      'Help us capture every moment. Use the event code to upload your favorite photos and see them appear in the gallery.',
+    uploadCode: 'DYE2026',
+    uploadStartsAt: '2026-06-01T00:00:00-06:00',
+    uploadEndsAt: '2026-12-31T23:59:59-06:00',
+    maxFileSizeMb: 5,
   },
   footer: {
     message: 'See you there',

@@ -133,6 +133,18 @@
   background: var(--color-primary);
 }
 
+.form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.status {
+  margin: -8px 0 0;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
 .photo {
   margin: 0;
   padding: 10px;

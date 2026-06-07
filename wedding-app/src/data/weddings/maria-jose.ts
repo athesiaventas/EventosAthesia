@@ -15,6 +15,7 @@ export const mariaJoseWedding: WeddingInfo = {
     invitation: 'centered',
     gallery: 'classic',
     guestPhotos: 'stack',
+   
     footer: 'sage',
   },
   theme: {
@@ -41,6 +42,15 @@ export const mariaJoseWedding: WeddingInfo = {
     title: 'Queremos compartir este día con vos',
     description:
       'Después de mucho soñar este momento, nos emociona invitarte a celebrar nuestra boda y acompañarnos en una mañana llena de familia, música y buenos recuerdos.',
+  },
+  
+  guestPhotos: {
+    title: 'Ayudanos a capturar nuestros momentos',
+    description: 'Sube tus fotografias y compartelas con nosotros durante la celebracion.',
+    uploadCode: 'MJC2026',
+    uploadStartsAt: '2026-01-01T00:00:00-06:00',
+    uploadEndsAt: '2026-12-31T23:59:59-06:00',
+    maxFileSizeMb: 5,
   },
   footer: {
     message: '¡Te esperamos!',

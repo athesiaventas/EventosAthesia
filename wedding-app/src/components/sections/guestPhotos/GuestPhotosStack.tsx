@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useGuestPhotos } from '../../../hooks/useGuestPhotos'
 import type { WeddingInfo } from '../../../types/wedding'
+import { GuestPhotoUploader } from './GuestPhotoUploader'
 import styles from './GuestPhotosStack.module.css'
 
 type GuestPhotosStackProps = {
@@ -9,11 +11,21 @@ type GuestPhotosStackProps = {
 export function GuestPhotosStack({ wedding }: GuestPhotosStackProps) {
   const [activePhoto, setActivePhoto] = useState(0)
   const stackOffsets = [-3, -2, -1, 0, 1, 2, 3]
-  const photos = wedding.gallery
+  const config = wedding.guestPhotos
+  const { photos, removeBrokenPhoto } = useGuestPhotos(wedding.slug)
+
+  useEffect(() => {
+    if (activePhoto >= photos.length) {
+      setActivePhoto(0)
+    }
+  }, [activePhoto, photos.length])
+
+  if (!config) {
+    return null
+  }
 
   const getPhoto = (offset: number) => {
-    const index = (activePhoto + offset + photos.length) % photos.length
-
+    const index = ((activePhoto + offset) % photos.length + photos.length) % photos.length
     return photos[index]
   }
 
@@ -28,37 +40,43 @@ export function GuestPhotosStack({ wedding }: GuestPhotosStackProps) {
   return (
     <section className={styles.section} id="fotos" aria-label="Fotos de invitados">
       <div className={styles.heading}>
-        <p>Ayúdanos a capturar momentos de nuestra boda</p>
+        <p>{config.title}</p>
+        <span>{config.description}</span>
       </div>
 
-      <div className={styles.stack} aria-live="polite">
-        {stackOffsets.map((offset) => {
-          const photo = getPhoto(offset)
+      <GuestPhotoUploader wedding={wedding} />
 
-          return (
-            <img
-              key={`${photo.alt}-${offset}`}
-              src={photo.src}
-              alt={offset === 0 ? photo.alt : ''}
-              className={styles.card}
-              data-offset={offset}
-              aria-hidden={offset !== 0}
-            />
-          )
-        })}
-      </div>
+      {photos.length > 0 && (
+        <>
+          <div className={styles.stack} aria-live="polite">
+            {stackOffsets.map((offset) => {
+              const photo = getPhoto(offset)
 
-      <div className={styles.controls}>
-        <button type="button" className={styles.arrow} onClick={previousPhoto} aria-label="Foto anterior">
-          ←
-        </button>
-        <button type="button" className={styles.viewAll}>
-          Ver todo
-        </button>
-        <button type="button" className={styles.arrow} onClick={nextPhoto} aria-label="Siguiente foto">
-          →
-        </button>
-      </div>
+              return (
+                <img
+                  key={`${photo.id}-${offset}`}
+                  src={photo.imageUrl}
+                  alt={offset === 0 ? 'Foto subida por invitado' : ''}
+                  className={styles.card}
+                  data-offset={offset}
+                  aria-hidden={offset !== 0}
+                  onError={() => removeBrokenPhoto(photo.id)}
+                />
+              )
+            })}
+          </div>
+
+          <div className={styles.controls}>
+            <button type="button" className={styles.arrow} onClick={previousPhoto} aria-label="Foto anterior">
+              &larr;
+            </button>
+            <button type="button" className={styles.viewAll}>Ver todo</button>
+            <button type="button" className={styles.arrow} onClick={nextPhoto} aria-label="Siguiente foto">
+              &rarr;
+            </button>
+          </div>
+        </>
+      )}
     </section>
   )
 }

@@ -1,0 +1,97 @@
+.hero {
+  min-height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 45, 41, 0.12);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 95px 52px 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.hero__brand h1 {
+  font-size: clamp(6rem, 18vw, 17rem);
+  line-height: 0.75;
+  letter-spacing: -0.08em;
+  font-weight: 900;
+}
+
+.hero__subtext {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.hero__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.hero__bottom h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 3.2vw, 4rem);
+  line-height: 1.15;
+  max-width: 720px;
+}
+
+.hero__actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero__actions button {
+  border: none;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.hero__actions button:first-child {
+  background: #0e3935;
+}
+
+.hero__actions button:last-child {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero__preview {
+  width: 220px;
+}
+
+.hero__preview img {
+  width: 100%;
+  height: 125px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.hero__preview p {
+  margin-top: 8px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}

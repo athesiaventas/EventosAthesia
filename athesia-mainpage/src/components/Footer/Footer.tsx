@@ -5,7 +5,7 @@ import background from "../../assets/images/main_footer.png"
 import mail from "../../assets/icons/mail.png"
 import fb from "../../assets/icons/fb.png"
 import ig from "../../assets/icons/ig.png"
-import footerLogo from "../../assets/images/main_footer.png"
+
 
 function Footer() {
   return (

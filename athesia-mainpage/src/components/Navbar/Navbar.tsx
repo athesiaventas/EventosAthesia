@@ -1,9 +1,12 @@
 import "./Navbar.css"
+import logo from "../../assets/images/logo.png"
 
 function Navbar() {
   return (
     <header className="navbar">
-      <div className="navbar__logo">✽</div>
+      <a className="navbar__logo" href="/" aria-label="Athesia">
+        <img src={logo} alt="" />
+      </a>
 
       <nav className="navbar__links">
         <a href="#about">Nosotros</a>

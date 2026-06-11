@@ -1,0 +1,145 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--nav-height, 76px);
+  padding: 0 clamp(20px, 2.8vw, 38px);
+  border-bottom: 1px solid rgba(38, 30, 24, 0.08);
+  background: var(--color-page-bg);
+  color: var(--color-nav-text);
+}
+
+.monogram {
+  color: inherit;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.2vw, 2.2rem);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.menuButton {
+  display: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3vw, 44px);
+}
+
+.links a {
+  color: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.links a:hover {
+  color: var(--color-primary);
+}
+
+.rsvp {
+  display: inline-grid;
+  place-items: center;
+  min-width: 78px;
+  min-height: 34px;
+  border: 1px solid rgba(28, 24, 20, 0.72);
+  transition:
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.rsvp:hover {
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    align-items: flex-start;
+    min-height: var(--nav-height, 70px);
+    padding: 16px 18px;
+    transition: min-height 260ms ease;
+  }
+
+  .nav.open {
+    min-height: 100svh;
+  }
+
+  .menuButton {
+    position: relative;
+    display: grid;
+    width: 34px;
+    height: 34px;
+    margin-top: -2px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: currentColor;
+    cursor: pointer;
+  }
+
+  .menuButton span,
+  .menuButton::before {
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    width: 23px;
+    height: 1px;
+    background: currentColor;
+    content: '';
+    transform-origin: center;
+    transition: transform 220ms ease;
+  }
+
+  .menuButton span {
+    transform: translateY(4px);
+  }
+
+  .menuButton::before {
+    transform: translateY(-4px);
+  }
+
+  .open .menuButton span {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .open .menuButton::before {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  .links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%, -42%);
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: min(320px, calc(100% - 48px));
+  }
+
+  .open .links {
+    display: flex;
+  }
+
+  .links a {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .rsvp {
+    min-width: 106px;
+    min-height: 44px;
+    margin-top: 2px;
+  }
+}

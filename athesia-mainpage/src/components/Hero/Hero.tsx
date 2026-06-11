@@ -15,7 +15,11 @@ function Hero() {
 
       <div className="hero__content">
         <div className="hero__brand">
-          <h1>Athesia</h1>
+          <svg className="hero__wordmark" viewBox="0 0 1000 245" role="img" aria-label="Athesia">
+            <text x="0" y="218" textLength="1000" lengthAdjust="spacingAndGlyphs">
+              Athesia
+            </text>
+          </svg>
 
           <div className="hero__subtext">
             <span>Diseño a la medida</span>

@@ -12,6 +12,7 @@ function Footer() {
     <>
       <section
         className="footer-cta"
+        id="contact"
         style={{
           backgroundImage: `url(${background})`,
         }}
@@ -25,7 +26,7 @@ function Footer() {
             sino en el amor y cuidado con el que se planifica cada detalle
           </h2>
 
-          <button>Contáctanos</button>
+          <a className="footer-cta__button" href="mailto:athesia.ventas@gmail.com">Contáctanos</a>
 
         </div>
       </section>
@@ -40,12 +41,12 @@ function Footer() {
 
             <nav>
 
-              <a>Inicio</a>
-              <a>Nosotros</a>
-              <a>Testimonios</a>
-              <a>Paquetes</a>
-              <a>Trabajos</a>
-              <a>Contacto</a>
+              <a href="/">Inicio</a>
+              <a href="#about">Nosotros</a>
+              <a href="#testimonials">Testimonios</a>
+              <a href="#packages">Paquetes</a>
+              <a href="#portfolio">Trabajos</a>
+              <a href="#contact">Contacto</a>
 
             </nav>
 

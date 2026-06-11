@@ -130,8 +130,21 @@ grid-template-columns:1fr 1fr;
 
 @media(max-width:650px){
 
+.packages {
+padding: 60px 20px;
+}
+
+.packages__title {
+margin-bottom: 34px;
+}
+
 .packages__grid{
 grid-template-columns:1fr;
+}
+
+.package-card {
+min-height: 500px;
+padding: 30px 24px;
 }
 
 }

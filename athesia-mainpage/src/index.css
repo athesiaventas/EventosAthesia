@@ -6,8 +6,18 @@
 
 body{
   font-family: Inter, sans-serif;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 #root{
   width:100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }

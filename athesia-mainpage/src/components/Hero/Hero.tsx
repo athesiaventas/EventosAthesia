@@ -36,16 +36,16 @@ function Hero() {
             </h2>
 
             <div className="hero__actions">
-              <button>Contactanos</button>
-              <button>Paquetes</button>
+              <a href="#contact">Contactanos</a>
+              <a href="#packages">Paquetes</a>
             </div>
           </div>
 
-          <div className="hero__preview">
+          <a className="hero__preview" href="#portfolio">
             <img src={ourworks} alt="Nuestro trabajo" />
 
             <p>Nuestro trabajo ↗</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>

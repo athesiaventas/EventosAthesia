@@ -46,7 +46,10 @@
   font-weight: 400;
 }
 
-.footer-cta__content button {
+.footer-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 34px;
 
   border: none;
@@ -62,6 +65,8 @@
   cursor: pointer;
 
   font-size: 18px;
+
+  text-decoration: none;
 }
 
 .footer {
@@ -206,6 +211,55 @@ flex-direction: column;
 gap: 20px;
 }
 
+.footer__brand {
+width: 100%;
+}
 
+.footer__brand h2 {
+font-size: clamp(4.5rem, 25vw, 9rem);
+text-align: center;
+}
+
+.footer__brand-subtext {
+max-width: 580px;
+margin-inline: auto;
+}
+
+.footer__bottom div {
+flex-wrap: wrap;
+gap: 14px 24px;
+}
+
+}
+
+@media (max-width: 560px) {
+.footer-cta {
+min-height: 420px;
+}
+
+.footer-cta__content {
+padding: 0 20px;
+}
+
+.footer__site nav {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px 28px;
+width: 100%;
+}
+
+.footer__contact p {
+font-size: 15px;
+overflow-wrap: anywhere;
+}
+
+.footer__brand {
+margin-top: 34px;
+}
+
+.footer__brand-subtext {
+padding: 0;
+font-size: 9px;
+}
 
 }

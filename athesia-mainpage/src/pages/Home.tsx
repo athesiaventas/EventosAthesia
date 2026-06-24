@@ -5,6 +5,7 @@ import About from "../components/About/About"
 import Portafolio from "../components/Portafolio/Portafolio"
 import Packages from "../components/Packages/Packages"
 import Moments from "../components/Moments/Moments"
+import ContactForm from "../components/ContactForm/ContactForm"
 import Footer from "../components/Footer/Footer"
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <Portafolio />
       <Packages />
       <Moments />
+      <ContactForm />
       <Footer />
     </>
   )
